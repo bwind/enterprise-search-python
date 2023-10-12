@@ -908,7 +908,7 @@ class AppSearch(BaseClient):
         sitemaps: t.Optional[
             t.Union[t.List[t.Mapping[str, t.Any]], t.Tuple[t.Mapping[str, t.Any], ...]]
         ] = None,
-        auth: t.Optional[t.Dict[str, str]] = None,
+        auth: t.Optional[dict[str, str]] = None,
     ) -> ObjectApiResponse[t.Any]:
         """
         Creates a crawler domain configuration for a given engine
@@ -988,7 +988,7 @@ class AppSearch(BaseClient):
         sitemaps: t.Optional[
             t.Union[t.List[t.Mapping[str, t.Any]], t.Tuple[t.Mapping[str, t.Any], ...]]
         ] = None,
-        auth: t.Optional[t.Dict[str, str]] = None,
+        auth: t.Optional[dict[str, str]] = None,
     ) -> ObjectApiResponse[t.Any]:
         """
         Updates crawler domain configuration for a given domain

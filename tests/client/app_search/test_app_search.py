@@ -16,6 +16,7 @@
 #  under the License.
 
 from unittest.mock import MagicMock
+
 import jwt
 import pytest
 
@@ -431,10 +432,6 @@ def test_create_signed_search_key():
 
 def test_create_crawler_domain_contains_auth(app_search):
     app_search.perform_request = MagicMock()
-    auth = {
-        "type": "basic",
-        "username": "kimchy",
-        "password": ":)"
-    }
+    auth = {"type": "basic", "username": "kimchy", "password": ":)"}
     app_search.create_crawler_domain(engine_name="engine", auth=auth)
-    assert app_search.perform_request.mock_calls[0][2]['body']['auth'] == auth
+    assert app_search.perform_request.mock_calls[0][2]["body"]["auth"] == auth

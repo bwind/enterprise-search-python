@@ -908,6 +908,7 @@ class AsyncAppSearch(BaseClient):
         sitemaps: t.Optional[
             t.Union[t.List[t.Mapping[str, t.Any]], t.Tuple[t.Mapping[str, t.Any], ...]]
         ] = None,
+        auth: t.Optional[dict[str, str]] = None,
     ) -> ObjectApiResponse[t.Any]:
         """
         Creates a crawler domain configuration for a given engine
@@ -931,6 +932,8 @@ class AsyncAppSearch(BaseClient):
             __body["name"] = name
         if sitemaps is not None:
             __body["sitemaps"] = sitemaps
+        if auth is not None:
+            __body["auth"] = auth
         __headers = {"accept": "application/json"}
         if __body is not None:
             __headers["content-type"] = "application/json"
@@ -985,6 +988,7 @@ class AsyncAppSearch(BaseClient):
         sitemaps: t.Optional[
             t.Union[t.List[t.Mapping[str, t.Any]], t.Tuple[t.Mapping[str, t.Any], ...]]
         ] = None,
+        auth: t.Optional[dict[str, str]] = None,
     ) -> ObjectApiResponse[t.Any]:
         """
         Updates crawler domain configuration for a given domain
@@ -1011,6 +1015,8 @@ class AsyncAppSearch(BaseClient):
             __body["name"] = name
         if sitemaps is not None:
             __body["sitemaps"] = sitemaps
+        if auth is not None:
+            __body["auth"] = auth
         __headers = {"accept": "application/json"}
         if __body is not None:
             __headers["content-type"] = "application/json"
